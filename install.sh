@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+echo "Get and install Vundle"
+git clone https://github.com/VundleVim/Vundle.Vim ~/.vim/bundle/Vundle.vim
+
 echo "Installing dotfiles"
 
 echo "Initializing submodule(s)"

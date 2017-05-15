@@ -23,8 +23,6 @@ bindkey "^A" beginning-of-line
 # xautolock -time 20 -locker lock
 export WORKON_HOME=$HOME/.virtualenvs
 export VISUAL="vim"
-source /usr/bin/virtualenvwrapper.sh
-source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -69,7 +67,7 @@ plugins=(extract git zsh-syntax-highlighting)
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/home/jon/scripts/bin:/home/jon/.gem/ruby/2.3.0/bin"
+#export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/home/jon/scripts/bin:/home/jon/.gem/ruby/2.3.0/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -157,33 +155,3 @@ bindkey -v
 # gpg-agent --daemon --enable-ssh-support
 
 
-#
-# if [ -f "${HOME}/.gpg-agent-info" ]; then
-  # . "${HOME}/.gpg-agent-info"
-  # export GPG_AGENT_INFO
-  # export SSH_AUTH_SOCK
-# fi
-# export GPG_TTY=$(tty)
-#
-#
-# Start the gpg-agent if not already running
-if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
-  gpg-connect-agent /bye >/dev/null 2>&1
-fi
-
-# Set SSH to use gpg-agent
-unset SSH_AGENT_PID
-if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-  export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
-fi
-
-
-# Set GPG TTY
-export GPG_TTY=$(tty)
-
-# Refresh gpg-agent tty in case user switches into an X session
-gpg-connect-agent updatestartuptty /bye >/dev/null
-
-gpgconf --create-socketdir
-
-xmodmap ~/.dotfiles/config/i3/umlaute
