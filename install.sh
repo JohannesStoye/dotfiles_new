@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-echo "Get and install Vundle"
-git clone https://github.com/VundleVim/Vundle.Vim ~/.vim/bundle/Vundle.vim
 
 echo "Installing dotfiles"
 
@@ -29,6 +27,8 @@ fi
 echo "creating vim directories"
 mkdir -p ~/.vim-tmp
 
+echo "Get and install Vundle"
+git clone https://github.com/VundleVim/Vundle.Vim ~/.vim/bundle/Vundle.vim
 
 echo "Configuring zsh as default shell"
 chsh -s $(which zsh)
