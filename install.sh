@@ -34,3 +34,8 @@ echo "Configuring zsh as default shell"
 chsh -s $(which zsh)
 vim +PluginInstall +qall
 echo "Done."
+
+echo "install powerlinefont"
+source inst_powerlinefont.sh
+echo "systemd: /tmp as tmpfs"
+source inst_tmpfs.sh
