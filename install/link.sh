@@ -49,6 +49,6 @@ for file in "${VIMFILES[@]}" ; do
         echo "${KEY} already exists... skipping"
     else
         echo "Creating symlink for $KEY"
-        ln -s ${VALUE} ${KEY}
+        ln -s ${KEY} ${VALUE}
     fi
 done
