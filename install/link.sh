@@ -52,3 +52,6 @@ for file in "${VIMFILES[@]}" ; do
         ln -s ${KEY} ${VALUE}
     fi
 done
+
+source inst_powerlinefonts.sh
+source tmp_as_tmpfs.sh
